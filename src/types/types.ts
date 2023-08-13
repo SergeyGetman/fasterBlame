@@ -19,3 +19,4 @@ export interface IModalTypes {
 export interface IBrecets {
   text?: string;
 }
+export type Matrix = number[][];

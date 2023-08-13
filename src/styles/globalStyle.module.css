@@ -105,6 +105,13 @@ button:hover span {
     background: none;
 }
 
+pre {
+    font-size: 30px;
+    color: #646761;
+    text-align: center;
+    margin: -100px;
+}
+
 @media (min-width: 768px) {
     button {
         font-size: 24px;

@@ -1,8 +1,8 @@
-import React, { FC, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styles from '../../styles/globalStyle.module.css';
 
 const Calculator = () => {
-  const [num, setNum] = useState<string>('0'); // Используйте строку для хранения числа
+  const [num, setNum] = useState<string>('0');
   const [oldNum, setOldNum] = useState<string>('0');
   const [operator, setOperator] = useState<string>('');
 
@@ -20,22 +20,15 @@ const Calculator = () => {
     setOperator('');
   }
 
-  function porcentagem() {
-    setNum((prevNum) => String(parseFloat(prevNum) / 100));
-  }
-
-  function changeSign() {
-    setNum((prevNum) => String(-parseFloat(prevNum)));
-  }
-  function changePlus() {
-    setNum((prevNum) => String(+parseFloat(prevNum)));
-  }
-
   function operatorHandler(e: React.MouseEvent<HTMLButtonElement>) {
     const operatorInput = e.currentTarget.value;
-    setOperator(operatorInput);
-    setOldNum(num);
-    setNum('0');
+    if (operatorInput === '-' && num === '0') {
+      setNum('-');
+    } else {
+      setOperator(operatorInput);
+      setOldNum(num);
+      setNum('0');
+    }
   }
 
   function calculate() {
@@ -53,40 +46,43 @@ const Calculator = () => {
     }
 
     setOperator('');
-    setOldNum('0');
+    setOldNum(num);
+  }
+
+  function porcentagem() {
+    const oldNumValue = parseFloat(oldNum);
+    const numValue = parseFloat(num);
+    const percentageValue = (numValue / 100) * oldNumValue;
+    setNum(String(percentageValue));
+    setOperator('');
+    setOldNum(String(percentageValue));
   }
 
   return (
     <div className={styles.wrapperCalc}>
       <h2 className={styles.resultCalk}>{num}</h2>
       <button onClick={clear}>AC</button>
-      <button onClick={changeSign}>-</button>
-      <button onClick={changePlus}>+</button>
+      <button onClick={operatorHandler} value={'-'}>
+        -
+      </button>
+      <button onClick={operatorHandler} value={'+'}>
+        +
+      </button>
       <button onClick={porcentagem}>%</button>
       {numbers.map((number) => (
-        <button key={number} className="grey" onClick={inputNum} value={number}>
+        <button key={number} onClick={inputNum} value={number}>
           {number}
         </button>
       ))}
-
-      <button className="orange" onClick={operatorHandler} value={'/'}>
-        /
-      </button>
-      <button className="orange" onClick={operatorHandler} value={'X'}>
-        X
-      </button>
-      <button className="orange" onClick={operatorHandler} value={'-'}>
-        -
-      </button>
-      <button className="orange" onClick={operatorHandler} value={'+'}>
-        +
-      </button>
-      <button className="grey" onClick={inputNum} value={'.'}>
+      {sumbols.map((num, idx) => (
+        <button key={idx} onClick={operatorHandler} value={num}>
+          {num}
+        </button>
+      ))}
+      <button onClick={inputNum} value={'.'}>
         ,
       </button>
-      <button className="orange" onClick={calculate}>
-        =
-      </button>
+      <button onClick={calculate}>=</button>
     </div>
   );
 };
