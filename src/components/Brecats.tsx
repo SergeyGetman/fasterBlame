@@ -23,7 +23,7 @@ const Brecats: FC<IBrecets> = (str) => {
         '<': [],
         '(': [],
       };
-      // eslint-disable no-console, no-control-regex
+      // eslint-disable-next-line
       let str = value.replace(/[^\<\>\{\}\[\]\(\)]/g, '');
 
       for (let a of str) {
