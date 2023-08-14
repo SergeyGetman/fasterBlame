@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/SergeyGetman/fasterBlame/static/css/main.821191dd.css",
-    "main.js": "/SergeyGetman/fasterBlame/static/js/main.b431f258.js",
-    "index.html": "/SergeyGetman/fasterBlame/index.html",
-    "main.821191dd.css.map": "/SergeyGetman/fasterBlame/static/css/main.821191dd.css.map",
-    "main.b431f258.js.map": "/SergeyGetman/fasterBlame/static/js/main.b431f258.js.map"
+    "main.css": "/fasterBlame/static/css/main.821191dd.css",
+    "main.js": "/fasterBlame/static/js/main.b431f258.js",
+    "index.html": "/fasterBlame/index.html",
+    "main.821191dd.css.map": "/fasterBlame/static/css/main.821191dd.css.map",
+    "main.b431f258.js.map": "/fasterBlame/static/js/main.b431f258.js.map"
   },
   "entrypoints": [
     "static/css/main.821191dd.css",
