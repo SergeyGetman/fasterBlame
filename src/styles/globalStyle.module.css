@@ -6,9 +6,9 @@ html, body {
 }
 
 .mainIfoBlock {
-    height: 700px;
+    height: 500px;
     display: flex;
-    background-image: url('https://img2.akspic.ru/crops/8/0/1/0/5/150108/150108-verhnyaya_odezhda-art-betmen-risovanie-elektrik-1920x1080.jpg');
+    background-image: url('https://nt.ua/Media/Default/img/profession-frontenf-dev_ru.png');
     border: 3px solid white;
     background-repeat: no-repeat;
     background-size: cover;

@@ -1,14 +1,21 @@
 import React from 'react';
 import './App.css';
-import MainAplication from './components';
 import Container from './components/Container';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'; // Исправлен импорт
+import Coursea from './components/Coursea';
+import MainAplication from './components/MainAplication';
 
 function App() {
   return (
     <>
-      <MainAplication>
-        <Container />
-      </MainAplication>
+      <BrowserRouter>
+        <MainAplication>
+          <Routes>
+            <Route path="/" element={<Container />} />
+            <Route path="/coursea" element={<Coursea />} />
+          </Routes>
+        </MainAplication>
+      </BrowserRouter>
     </>
   );
 }

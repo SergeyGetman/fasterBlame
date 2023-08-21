@@ -1,34 +1,26 @@
 import React, { useState } from 'react';
 import styles from '../styles/globalStyle.module.css';
 import Button from './button';
-import { ModalWindow } from './modal/Modal';
-import { MOCK_DATA } from '../store/mock';
-import { TextField } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Container = () => {
   const [openHandler, setOpenHandler] = useState(false);
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
+
+  const navigate = useNavigate();
 
   const handleClickFC = (idx: number) => {
     setOpenHandler(!openHandler);
     setSelectedIdx(idx);
   };
 
+  const handleClickNavigate = () => {
+    navigate('/coursea');
+  };
+
   return (
     <div className={styles.wrapper}>
-      {MOCK_DATA.map((el, idx) => {
-        return <Button key={idx} text={el.title} handleClick={() => handleClickFC(idx)} />;
-      })}
-      {selectedIdx !== null && (
-        <ModalWindow
-          handleClick={() => setOpenHandler(false)}
-          openModal={openHandler}
-          describeTask={MOCK_DATA[selectedIdx].subtitle}
-          step={selectedIdx}
-        >
-          <TextField id="outlined-basic" label="message here" variant="outlined" />
-        </ModalWindow>
-      )}
+      <Button text="Open program of course" handleClick={handleClickNavigate} />
     </div>
   );
 };
