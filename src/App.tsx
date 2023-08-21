@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <MainAplication>
           <Routes>
-            <Route path="/" element={<Container />} />
+            <Route path="/" element={<Coursea />} />
             <Route path="/coursea" element={<Coursea />} />
           </Routes>
         </MainAplication>
