@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fasterBlame/static/css/main.821191dd.css",
-    "main.js": "/fasterBlame/static/js/main.b431f258.js",
+    "main.css": "/fasterBlame/static/css/main.f3fbd9d0.css",
+    "main.js": "/fasterBlame/static/js/main.009080e1.js",
     "index.html": "/fasterBlame/index.html",
-    "main.821191dd.css.map": "/fasterBlame/static/css/main.821191dd.css.map",
-    "main.b431f258.js.map": "/fasterBlame/static/js/main.b431f258.js.map"
+    "main.f3fbd9d0.css.map": "/fasterBlame/static/css/main.f3fbd9d0.css.map",
+    "main.009080e1.js.map": "/fasterBlame/static/js/main.009080e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.821191dd.css",
-    "static/js/main.b431f258.js"
+    "static/css/main.f3fbd9d0.css",
+    "static/js/main.009080e1.js"
   ]
 }
