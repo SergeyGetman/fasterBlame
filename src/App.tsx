@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import Container from './components/Container';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'; // Исправлен импорт
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Coursea from './components/Coursea';
 import MainAplication from './components/MainAplication';
 
